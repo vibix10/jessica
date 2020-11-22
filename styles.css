@@ -1,5 +1,5 @@
 #nav-bar{position:fixed; top:0;}
-#video{width:250px; height:250px; control}
+#video{width:250px; height:250px; controls}
 #email-entry{display:flex;}
 @media (max-width:500px){
   #video{
