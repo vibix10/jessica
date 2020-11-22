@@ -1,0 +1,9 @@
+#nav-bar{position:fixed; top:0;}
+#video{width:250px; height:250px; control}
+#email-entry{display:flex;}
+@media (max-width:500px){
+  #video{
+    width:200px;
+    height:200px;
+  }
+}
