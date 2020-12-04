@@ -18,3 +18,17 @@ function diffArray(arr1, arr2) {
 
 diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+
+/* remove elements provided from the array. the user can provide any number of elements to be removed. */
+function destroyer(arr, ...args) {
+  let newArr = [];
+  for(let i =0; i < arr.length; i++){
+    if(args.indexOf(arr[i]) == -1){
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
