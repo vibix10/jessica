@@ -32,3 +32,38 @@ function destroyer(arr, ...args) {
 
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
+
+/** search for an object from an array of objects to match particular properties. */
+function whatIsInAName(collection, source) {
+  var arr = [];
+  // Only change code below this line
+  for(let i = 0; i < collection.length; i++){
+    if(compare(collection[i], source)){
+      arr.push(collection[i]);
+    }
+  }
+
+  // Only change code above this line
+  return arr;
+}
+
+function compare(real_obj, search_obj) {
+  let real_prop = Object.keys(real_obj);
+  let search_prop = Object.keys(search_obj);
+  if(search_prop.every(function(element){
+    return real_prop.indexOf(element) >= 0;
+  })){
+    
+    for(let i = 0; i < search_prop.length; i++){
+      if(search_obj[search_prop[i]] !=  real_obj[search_prop[i]]){
+        return false;
+      }
+    }
+    return true;
+  };
+  return false;
+}
+//console.log(Object.values({name:'ben', age:20}))
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
